@@ -5,7 +5,7 @@
   "keywords": [
     "magnet",
     "magnetjs",
-    "ioredis"
+    "magnet-ioredis"
   ],
   "homepage": "https://github.com/magnetjs/magnet-ioredis#readme",
   "bugs": {
