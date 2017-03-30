@@ -4,9 +4,11 @@ import Redis, { Cluster } from 'ioredis'
 import defaultConfig from './config/ioredis'
 
 // WIP
-export default class MagnetIoredisCluster extends Module {
+export default class Ioredis extends Module {
   async setup () {
     this.log.warn('WIP: use at your own risk')
+
+    const config = this.prepareConfig('ioredis', defaultConfig)
 
     Redis.Promise.onPossiblyUnhandledRejection((err) => {
       this.log.error(err)
@@ -14,8 +16,8 @@ export default class MagnetIoredisCluster extends Module {
 
     // Any cleaner way? Adding this because of
     // https://github.com/Automattic/kue#using-ioredis-client-with-cluster-support
-    this.app.ioredisClusterFactory = () => {
-      return new Cluster(this.config.cluster, this.config)
+    this.app.ioredisClusterFactory = function () {
+      return new Cluster(config.cluster, config)
     }
     this.app.ioredisCluster = this.app.ioredisClusterFactory()
     this.app.ioredisCluster.on('error', (err) => {

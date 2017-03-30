@@ -1,11 +1,11 @@
 {
   "name": "magnet-ioredis",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "Magnet adapter for ioredis",
   "keywords": [
     "magnet",
     "magnetjs",
-    "ioredis"
+    "magnet-ioredis"
   ],
   "homepage": "https://github.com/magnetjs/magnet-ioredis#readme",
   "bugs": {

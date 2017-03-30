@@ -10,20 +10,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
 const Redis = require("ioredis");
-const ioredis_1 = require("./config/ioredis");
-class Ioredis extends module_1.Module {
+class MagnetIoredis extends module_1.Module {
+    get moduleName() { return 'ioredis'; }
+    get defaultConfig() { return __dirname; }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            const config = this.prepareConfig('ioredis', ioredis_1.default);
             Redis.Promise.onPossiblyUnhandledRejection((err) => {
-                this.log.error('ioredis onPossiblyUnhandledRejection');
                 this.log.error(err);
             });
             // Any cleaner way? Adding this because of
             // https://github.com/Automattic/kue#using-ioredis-client-with-cluster-support
-            this.app.ioredisFactory = function () {
-                return new Redis(config);
-            };
+            this.app.ioredisFactory = () => new Redis(this.config);
             this.app.ioredis = this.app.ioredisFactory();
             this.app.ioredis.on('error', (err) => {
                 this.log.error(err);
@@ -36,5 +33,5 @@ class Ioredis extends module_1.Module {
         });
     }
 }
-exports.default = Ioredis;
+exports.default = MagnetIoredis;
 //# sourceMappingURL=index.js.map
