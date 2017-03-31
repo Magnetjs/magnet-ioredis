@@ -1,4 +1,6 @@
 ### Usage
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Magnetjs/magnet-ioredis.svg)](https://greenkeeper.io/)
 Basic
 ```
 import { fromNode, fromM, fromLocal } from 'magnet-core'
