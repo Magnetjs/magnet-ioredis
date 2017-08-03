@@ -2,8 +2,10 @@ import { Module } from 'magnet-core/module'
 import * as Redis from 'ioredis'
 
 export default class MagnetIoredis extends Module {
-  get moduleName () { return 'ioredis' }
-  get defaultConfig () { return __dirname }
+  init () {
+    this.moduleName = 'ioredis'
+    this.defaultConfig = __dirname
+  }
 
   async setup () {
     Redis.Promise.onPossiblyUnhandledRejection((err) => {

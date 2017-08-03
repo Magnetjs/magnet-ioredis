@@ -1,10 +1,13 @@
 import { Module } from 'magnet-core/module'
 import Redis, { Cluster } from 'ioredis'
 
-import defaultConfig from './config/ioredis'
-
 // WIP
 export default class MagnetIoredisCluster extends Module {
+  init () {
+    this.moduleName = 'ioredis'
+    this.defaultConfig = __dirname
+  }
+
   async setup () {
     this.log.warn('WIP: use at your own risk')
 
