@@ -12,6 +12,10 @@ const module_1 = require("magnet-core/module");
 const ioredis_1 = require("ioredis");
 // WIP
 class MagnetIoredisCluster extends module_1.Module {
+    init() {
+        this.moduleName = 'ioredis';
+        this.defaultConfig = __dirname;
+    }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
             this.log.warn('WIP: use at your own risk');
