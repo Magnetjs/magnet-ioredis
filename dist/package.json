@@ -1,6 +1,6 @@
 {
   "name": "magnet-ioredis",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Magnet adapter for ioredis",
   "keywords": [
     "magnet",
