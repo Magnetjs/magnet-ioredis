@@ -19,7 +19,7 @@ class MagnetIoredisCluster extends module_1.Module {
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
             this.log.warn('WIP: use at your own risk');
-            ioredis_1.default.Promise.onPossiblyUnhandledRejection((err) => {
+            ioredis_1.Promise.onPossiblyUnhandledRejection((err) => {
                 this.log.error(err);
             });
             // Any cleaner way? Adding this because of
