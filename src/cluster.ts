@@ -1,5 +1,5 @@
 import { Module } from 'magnet-core/module'
-import Redis, { Cluster } from 'ioredis'
+import Redis, { Cluster, Promise as _promise } from 'ioredis'
 
 // WIP
 export default class MagnetIoredisCluster extends Module {
@@ -11,7 +11,7 @@ export default class MagnetIoredisCluster extends Module {
   async setup () {
     this.log.warn('WIP: use at your own risk')
 
-    Redis.Promise.onPossiblyUnhandledRejection((err) => {
+    _promise.onPossiblyUnhandledRejection((err) => {
       this.log.error(err)
     })
 
