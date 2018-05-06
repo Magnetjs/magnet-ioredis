@@ -1,6 +1,6 @@
 {
   "name": "magnet-ioredis",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Magnet adapter for ioredis",
   "keywords": [
     "magnet",
@@ -19,8 +19,10 @@
     "build": "fly buildAndCopy",
     "dist": "npm run build && cd dist && npm publish"
   },
+  "peerDependencies": {
+    "ioredis": "^3.1.2"
+  },
   "dependencies": {
-    "ioredis": "^3.1.2",
     "magnet-core": "^4.0.1"
   },
   "devDependencies": {
