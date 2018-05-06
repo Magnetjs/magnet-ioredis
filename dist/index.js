@@ -11,8 +11,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
 const Redis = require("ioredis");
 class MagnetIoredis extends module_1.Module {
-    get moduleName() { return 'ioredis'; }
-    get defaultConfig() { return __dirname; }
+    init() {
+        this.moduleName = 'ioredis';
+        this.defaultConfig = __dirname;
+    }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
             Redis.Promise.onPossiblyUnhandledRejection((err) => {
