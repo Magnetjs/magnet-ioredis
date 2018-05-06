@@ -8,9 +8,9 @@ export default class MagnetIoredis extends Module {
   }
 
   async setup () {
-    Redis.Promise.onPossiblyUnhandledRejection((err) => {
-      this.log.error(err)
-    })
+    // Redis.Promise.onPossiblyUnhandledRejection((err) => {
+    //   this.log.error(err)
+    // })
 
     // Any cleaner way? Adding this because of
     // https://github.com/Automattic/kue#using-ioredis-client-with-cluster-support

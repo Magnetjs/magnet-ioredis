@@ -17,9 +17,9 @@ class MagnetIoredis extends module_1.Module {
     }
     setup() {
         return __awaiter(this, void 0, void 0, function* () {
-            Redis.Promise.onPossiblyUnhandledRejection((err) => {
-                this.log.error(err);
-            });
+            // Redis.Promise.onPossiblyUnhandledRejection((err) => {
+            //   this.log.error(err)
+            // })
             // Any cleaner way? Adding this because of
             // https://github.com/Automattic/kue#using-ioredis-client-with-cluster-support
             this.app.ioredisFactory = () => new Redis(this.config);
