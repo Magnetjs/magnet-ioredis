@@ -17,13 +17,16 @@
   "scripts": {
     "start": "fly",
     "build": "fly buildAndCopy",
-    "dist": "npm run build && cd dist && npm publish"
+    "dist": "npm run build && cd dist && npm publish",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "peerDependencies": {
     "ioredis": "^3.1.2"
   },
   "dependencies": {
-    "magnet-core": "^4.0.1"
+    "magnet-core": "^4.0.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "fly": "^2.0.5",
@@ -36,5 +39,6 @@
   "engines": {
     "node": ">=6.9.5"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
